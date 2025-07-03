@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Shirt } from './shirt';
+import { Shirt } from './Shirt';
 
 @Component({
   selector: 'app-shirts-list',
