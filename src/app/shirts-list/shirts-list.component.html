@@ -1,0 +1,25 @@
+<h2>Lista de Camisetas</h2>
+<div class="container mt-4">
+  <div class="row">
+    <!-- Camisetas dinámicas -->
+
+
+    <div *ngFor="let shirt of shirts" class="col-sm-6 col-md-4 mb-4"  >
+      <div class="card h-100 text-center" [ngClass]="{'clearance' : shirt.clearance}">
+        
+        <img [src]="shirt.image" [alt]="shirt.name" class="img-thumbnail" width="100%">
+        
+        <div class="card-body">
+
+          <p class="badge bg-success" *ngIf="shirt.installments > 0">{{shirt.installments}} CUOTAS SIN INTERÉS</p>
+          <h5 class="card-title">{{ shirt.name | titlecase }}</h5>
+          <p class="card-text">Temporada {{ shirt.season}}</p>
+          <p class="card-text text-dark fw-bold fs-4">{{ shirt.price | currency}}</p>
+          <p *ngIf="shirt.stock == 0" class="badge badge-dark">SIN STOCK</p>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
