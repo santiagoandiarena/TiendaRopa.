@@ -1,3 +1,55 @@
 .clearance{
     border: 2px solid yellowgreen;
 }
+
+.badge-sin-stock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #6c757d; /* gris Bootstrap: bg-secondary */
+  color: white;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+  z-index: 1;
+}
+
+.badge-cuotas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #198754; /* bg-success */
+  color: white;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 0 0 0 4px;
+  z-index: 1;
+}
+
+.product-img {
+  height: 250px; /* o el alto que desees */
+  object-fit: cover;
+  object-position: top;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.input-amount {
+  max-width: 60px;
+}
+
+.quantity-control .btn {
+  width: 40px;
+}
+
+

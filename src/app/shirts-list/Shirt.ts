@@ -7,5 +7,6 @@ export interface Shirt{
     image: string;
     clearance: boolean;
     installments: number;
+    amount: number;
 
 }
