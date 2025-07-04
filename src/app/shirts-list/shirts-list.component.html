@@ -22,11 +22,11 @@
           <p class="card-text">Temporada {{ shirt.season }}</p>
           <p class="card-text text-dark fw-bold fs-4">{{ shirt.price | currency }}</p>
 
-          <div class="input-group justify-content-center mt-2 quantity-control">
+          <div *ngIf="shirt.stock > 0" class="input-group justify-content-center mt-2 quantity-control">
             <button class="btn btn-outline-secondary" type="button" (click)="upAmount(shirt)">+</button>
             <input type="text" class="form-control text-center input-amount" [(ngModel)]="shirt.amount"
               (keypress)="allowOnlyNumbers($event)" (input)="validateStock($event, shirt)" inputmode="numeric"
-              pattern="[0-9]*"/>
+              pattern="[0-9]*" />
             <button class="btn btn-outline-secondary" type="button" (click)="downAmount(shirt)">−</button>
           </div>
         </div>
