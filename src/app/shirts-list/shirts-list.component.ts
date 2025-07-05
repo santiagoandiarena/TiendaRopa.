@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Shirt } from './Shirt';
+import { ShirtCartService } from '../shirt-cart.service';
 
 @Component({
   selector: 'app-shirts-list',
@@ -31,7 +32,7 @@ export class ShirtsListComponent implements OnInit {
       amount: 0,
     },
     {
-      name: "camiseta Racing",
+      name: "Camiseta Racing",
       price: 80000,
       stock: 5,
       season: "24/25",
@@ -41,7 +42,7 @@ export class ShirtsListComponent implements OnInit {
       amount: 0,
     },
     {
-      name: "Camiseta independiente",
+      name: "Camiseta Independiente",
       price: 80000,
       stock: 7,
       season: "24/25",
@@ -61,7 +62,7 @@ export class ShirtsListComponent implements OnInit {
       amount: 0,
     },
     {
-      name: "Camiseta estudiantes",
+      name: "Camiseta Estudiantes",
       price: 70000,
       stock: 4,
       season: "24/25",
@@ -72,15 +73,30 @@ export class ShirtsListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private cart: ShirtCartService) {
+
+  }
 
   ngOnInit(): void {
 
   }
 
-  maxReached(m : string){
+  maxReached(m: string) {
     alert(m);
   }
+
+  addToCart(shirt: Shirt): void {
+    this.cart.addToCart(shirt);
+    // shirt.stock -= shirt.amount; // el control de stock lo maneja la funcion getAvailableStock
+    shirt.amount = 0;
+  }
+
+  getAvailableStock(shirt: Shirt): number {
+    const item = this.cart.cartList.getValue().find(v => v.name === shirt.name);
+    return shirt.stock - (item?.amount || 0);
+  }
+
+
 
 
 }
