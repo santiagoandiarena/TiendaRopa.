@@ -78,39 +78,9 @@ export class ShirtsListComponent implements OnInit {
 
   }
 
-  upAmount(shirt: Shirt): void {
-    if (shirt.amount < shirt.stock)
-      shirt.amount++;
+  maxReached(m : string){
+    alert(m);
   }
-
-  downAmount(shirt: Shirt): void {
-    if (shirt.amount > 0)
-      shirt.amount--;
-  }
-
-  allowOnlyNumbers(event: KeyboardEvent): void {
-    const key = event.key;
-
-    // Solo permitir teclas 0-9
-    if (!/^[0-9]$/.test(key)) {
-      event.preventDefault();
-    }
-  }
-
-  validateStock(event: Event, shirt: Shirt): void {
-    const input = event.target as HTMLInputElement;
-    let value = Number(input.value);
-
-    // Limitar por stock
-    if (value > shirt.stock) {
-      value = shirt.stock;
-      input.value = String(value);
-    }
-
-    // Actualizar el modelo
-    shirt.amount = value;
-  }
-
 
 
 }

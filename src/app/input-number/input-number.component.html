@@ -1,0 +1,7 @@
+<div  class="input-group justify-content-center mt-2 quantity-control">
+    <button class="btn btn-outline-secondary" type="button" (click)="upAmount()">+</button>
+    <input type="text" class="form-control text-center input-amount" [(ngModel)]="amount"
+        (keypress)="allowOnlyNumbers($event)" (input)="validateStock($event )" inputmode="numeric"
+        pattern="[0-9]*" />
+    <button class="btn btn-outline-secondary" type="button" (click)="downAmount()">−</button>
+</div>

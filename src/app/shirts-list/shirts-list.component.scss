@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #6c757d; /* gris Bootstrap: bg-secondary */
+  background-color: #6c757d;
   color: white;
   padding: 2px 6px;
   font-size: 11px;
@@ -19,7 +19,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #198754; /* bg-success */
+  background-color: #198754;
   color: white;
   padding: 2px 6px;
   font-size: 11px;
@@ -29,7 +29,7 @@
 }
 
 .product-img {
-  height: 250px; /* o el alto que desees */
+  height: 250px; 
   object-fit: cover;
   object-position: top;
 }
@@ -42,10 +42,6 @@
 
 .card:hover {
   transform: scale(1.02);
-}
-
-.input-amount {
-  max-width: 60px;
 }
 
 .quantity-control .btn {

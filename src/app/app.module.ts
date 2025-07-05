@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ShirtsAboutComponent } from './shirts-about/shirts-about.component';
 import { ShirtsCartComponent } from './shirts-cart/shirts-cart.component';
 import { ShirtsBuyComponent } from './shirts-buy/shirts-buy.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ShirtsBuyComponent } from './shirts-buy/shirts-buy.component';
     ShirtsListComponent,
     ShirtsAboutComponent,
     ShirtsCartComponent,
-    ShirtsBuyComponent
+    ShirtsBuyComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,
