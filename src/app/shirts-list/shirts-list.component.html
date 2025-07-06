@@ -21,6 +21,7 @@
           <p class="card-text">Temporada {{ shirt.season }}</p>
           <p class="card-text text-dark fw-bold fs-4">{{ shirt.price | currency }}</p>
 
+
           <app-input-number [(amount)]="shirt.amount" [max]="getAvailableStock(shirt)"
             *ngIf="getAvailableStock(shirt) > 0" (maxReached)="maxReached($event)">
           </app-input-number>

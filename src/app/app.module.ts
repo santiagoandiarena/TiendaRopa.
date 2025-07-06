@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShirtsListComponent } from './shirts-list/shirts-list.component';
 
+
 import { FormsModule } from '@angular/forms';
 import { ShirtsAboutComponent } from './shirts-about/shirts-about.component';
 import { ShirtsCartComponent } from './shirts-cart/shirts-cart.component';
 import { ShirtsBuyComponent } from './shirts-buy/shirts-buy.component';
 import { InputNumberComponent } from './input-number/input-number.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { InputNumberComponent } from './input-number/input-number.component';
     FormsModule,
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
