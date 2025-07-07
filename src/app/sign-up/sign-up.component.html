@@ -1,0 +1,54 @@
+<form [formGroup]="formSignUp" (submit)="onSubmit()" class="container mt-5 p-4 border rounded shadow bg-white"
+    style="max-width: 500px">
+    <h2 class="mb-4">Registrarse</h2>
+
+    <div class="mb-3">
+        <label for="username" class="form-label">Usuario</label>
+        <input type="text" id="username" formControlName="username" class="form-control"
+            [ngClass]="{'is-invalid': formSignUp.get('username')?.invalid && formSignUp.get('username')?.touched}">
+        <div *ngIf="formSignUp.get('username')?.hasError('required') && formSignUp.get('username')?.touched"
+            class="invalid-feedback">
+            Se requiere usuario
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control"
+            [ngClass]="{'is-invalid': formSignUp.get('email')?.invalid && formSignUp.get('email')?.touched}">
+        <div *ngIf="formSignUp.get('email')?.hasError('required') && formSignUp.get('email')?.touched"
+            class="invalid-feedback">
+            El email es obligatorio
+        </div>
+        <div *ngIf="formSignUp.get('email')?.hasError('email') && formSignUp.get('email')?.touched"
+            class="invalid-feedback">
+            Debe ingresar un email válido
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" formControlName="password" class="form-control"
+            [ngClass]="{'is-invalid': formSignUp.get('password')?.invalid && formSignUp.get('password')?.touched}">
+        <div *ngIf="formSignUp.get('password')?.hasError('required') && formSignUp.get('password')?.touched"
+            class="invalid-feedback">
+            Se requiere contraseña
+        </div>
+        <div *ngIf="formSignUp.get('password')?.hasError('minlength') && formSignUp.get('password')?.touched"
+            class="invalid-feedback">
+            La contraseña debe tener al menos 6 caracteres
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+            [ngClass]="{'is-invalid': formSignUp.hasError('passwordMissMatch') && formSignUp.get('confirmPassword')?.touched}">
+        <div *ngIf="formSignUp.hasError('passwordMissMatch') && formSignUp.get('confirmPassword')?.touched"
+            class="invalid-feedback">
+            La contraseña no coincide
+        </div>
+    </div>
+
+    <button [disabled]="formSignUp.invalid" type="submit" class="btn btn-primary w-100">Sign Up</button>
+</form>

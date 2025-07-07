@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { ShirtsListComponent } from './shirts-list/shirts-list.component';
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShirtsAboutComponent } from './shirts-about/shirts-about.component';
 import { ShirtsCartComponent } from './shirts-cart/shirts-cart.component';
 import { ShirtsBuyComponent } from './shirts-buy/shirts-buy.component';
 import { InputNumberComponent } from './input-number/input-number.component';
 import { provideHttpClient } from '@angular/common/http';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,14 @@ import { provideHttpClient } from '@angular/common/http';
     ShirtsAboutComponent,
     ShirtsCartComponent,
     ShirtsBuyComponent,
-    InputNumberComponent
+    InputNumberComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration(withEventReplay()),
